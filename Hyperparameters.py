@@ -691,6 +691,10 @@ class Hyperparameters(object):
         h = hashlib.new('sha512')
         h.update(str_to_hash)
         hps_hash = h.hexdigest()[0:self._hash_len]
+        output = "";
+        for param in hps:
+            output += param + "" + str( hps[param] )
+        hps_hash = output
 
         return hps_hash
 
